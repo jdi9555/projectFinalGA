@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLOG Feeder</title>
+      <link rel="stylesheet" type="text/css" href="css/projectFinal.css">
+    </style>
+  </head>
+  <body>
+    <div class="heading">
+      <h1>BOOKS BY J.R.R. TOLKIEN - FEEDER</h1>
+    </div>
+
+    <div class="box-1">
+      <div>
+        <label>News Blogs and Articles</label>
+        <br />
+        <br />
+        <select name="article" class="dropdown" onchange=" location = this.value">
+          <option value="article1">Article One</option>
+          <option value="article2">Article Two</option>
+          <option value="article3">Article Three</option>
+        </select>
+
+        <button id="getPerson" class="dropdown">Show main Characters</button>
+        <button id="getData" class="dropdown">List all Keys of API Data Object</button>
+        <button id="getTitles" class="dropdown">Show Book Titles</button>
+        <div class="list">
+          <ul id="titleData">loading</ul>
+        </div>
+        <!-- <li><a href="https://covers.openlibrary.org/b/isbn/0385472579-L.jpg"></a>
+          <span id="output">Book Titles</div>
+        </a></li> -->
+      </div>
+    <h1>Hello Firebase projectFinal</h1>
+    <script src="js/projectFinal.js"></script>
+    <script src="js/firebase.js" type="module"></script>
+  </body>
+</html>
