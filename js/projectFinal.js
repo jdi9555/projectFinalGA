@@ -16,6 +16,8 @@ function getData() {
     });
 }
 
+listTitles = {};
+
 // Show Titles (titles is an array within an object within the main API-object):
 function getTitles() {
   fetch("http://openlibrary.org/search.json?author=tolkien")
@@ -27,9 +29,28 @@ function getTitles() {
         document.getElementById(
           "titleData"
         ).innerHTML += `<li>${doc.title}</li>`;
+        document.getElementById(
+          "titleData"
+        ).innerHTML += `<button id="onclick">Like</button>`;
+        document.getElementById(
+          "titleData"
+        ).innerHTML += `<label>Feedback</label>`;
+        document.getElementById(
+          "titleData"
+        ).innerHTML += `<textarea name="feedback"></textarea>`;
+        document.getElementById(
+          "titleData"
+        ).innerHTML += `<button id="onclick">submit</button>`;
+        let reviewSubmit = document.getElementById("onclick");
       });
     });
 }
+
+// Below to be implemented: Submit button function needs to send to firebase
+// Then create on button: "show all reviews"
+button.onclick = function () {
+  btnSendMail_Click();
+};
 
 // Access object "authors" within the API-object:
 function getPerson() {
@@ -40,6 +61,9 @@ function getPerson() {
         document.getElementById(
           "getPerson"
         ).innerHTML += `<li>${doc.person}</li>`;
+        // Create button next to each list item?
+        // Call it "like". Each time it is clicked - save to Firebase:
+        // Also include a user name field - plus a submit button.
       });
     });
 }

@@ -19,13 +19,26 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+const db = getDatabase();
+
 function writeUserData(title, author, bookCoverUrl) {
-  const db = getDatabase();
   set(ref(db, "Chemistry Books/" + title), {
     title: title,
     author: author,
     profile_picture: bookCoverUrl,
   });
 }
+let reviewSubmit = document.getElementById("onclick");
+function reviewSubmit() {}
 
 writeUserData("The Lord of the Rings", "Tolkien", "sourceURL");
+
+function submitComment() {
+  let data = {
+    comment: inputComment.value(),
+    likes: likes,
+  };
+}
+
+console.log(data);
+let ref = db.ref("likes");
